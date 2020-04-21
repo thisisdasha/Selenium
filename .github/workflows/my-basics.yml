@@ -1,0 +1,32 @@
+# This is a basic workflow to help you get started with Actions
+
+name: My-GitHubAction-Basic
+env:
+  APPLICATION_NAME: "MyFlask"
+  PACKAGE_NAME    : "flask-deploy-ver-${{ github.sha}}"
+
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  my_testing:
+    runs-on: ubuntu-latest
+  
+    steps:
+    - name: Print Hello Message in Testing
+      run: echo "Hello World fron Testing job"
+  
+    - name: Execure few commands
+      run: |
+        echo "Hello Message1"
+        echo "Hello Message2"
+        echo "Application name: ${{ env.APPLICATION_NAME}}
+        
+  my_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Hello Message in Deploy
+        run: echo "Hello World from Deploy job" 
