@@ -32,4 +32,4 @@ jobs:
         run: echo "Hello World from Deploy job" 
       
       - name: Printing Development package
-        run: echo "Deploy package namec is ${{env.PACKAGE_NAME}}
+        run: echo "Deploy package name is ${{env.PACKAGE_NAME}}"
